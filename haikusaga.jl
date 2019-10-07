@@ -1,7 +1,4 @@
 import Pkg; Pkg.activate("env")
-"""
-Pkg.add("StringEncodings")
-"""
 
 using StringEncodings
 
@@ -13,6 +10,9 @@ include("control.jl")
 USAGE = """
 unzip dela-fr-public.zip # il y a des personnes louches dedans
 
+import Pkg; Pkg.activate("env")
+Pkg.add("StringEncodings")
+
 include("haikusaga.jl")
 haikusaga("aimer fait mal") #HS0201
 haikusaga("plus que hair") #HS0202
@@ -20,7 +20,7 @@ s = "Liure au pieu ?
 Quelque ruse salique ?
 Perles à la paupière ?
 Sus, rue, résilie, Lili !"
-control(liste_mots("plus que hair"), nettoie(s))
+control("plus que hair", s)
 """
 
 """

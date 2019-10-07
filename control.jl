@@ -38,4 +38,6 @@ function control(AMOTS, lir, sn)
 end
 
 
-control(AMOTS, sn) = control(AMOTS, Array{UInt8, 1}(), sn)
+control(AMOTS::Array{Array{UInt8,1},1},
+        sn::Array{UInt8,1}) = control(AMOTS, Array{UInt8, 1}(), sn)
+control(amots::String, s::String) = control(liste_mots(amots), nettoie(s))
